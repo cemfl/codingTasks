@@ -1,0 +1,16 @@
+<!-- task_maanger/templates/task_manager/partials/header.html-->
+
+
+<div class="header">
+    <h1>{% block header %}Task Manager App{% endblock %}</h1>
+    <nav>
+        <a class="menu-button" href="{% url 'index' %}">Home</a> 
+        {% if user.is_authenticated %}
+            <a class="menu-button" href="{% url 'task_list' %}">Task List</a>
+            <a class="menu-button" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a class="menu-button" href="{% url 'login' %}">Login
+            <a class="menu-button" href="{% url 'register' %}">Register</a> 
+        {% endif %}
+    </nav>
+</div>

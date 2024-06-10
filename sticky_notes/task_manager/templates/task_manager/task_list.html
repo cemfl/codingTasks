@@ -1,0 +1,17 @@
+<!-- task_manager/templates/task_manager/task_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sticky Notes - {{ page_title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ page_title }}</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <a href="{% url 'task_detail' pk=task.pk %}">{{ task.title }}</a>
+            <p>Deadline: {{ task.deadline }} | Created at: {{ task.created_at }}</P>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'task_create' %}">Create a new task</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- task_manager/templates/task_manager/task_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Sticky Notes - {% if form.instance.pk %}Edit{% else %}Create{% endif %} Task{% endblock %}
+
+{% block content %}
+    <h2>{% if form.instance.pk %}Edit{% else %}Create{% endif %}Task</h2>
+    <form method="post" action="{% if form.instance.pk %}{% url 'task_update' pk=form.instance.pk %}{% else %}{% url 'task_create' %}{% endif %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'task_list' %}">Back to Task List</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- task_manager/templates/task_manager/index.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="index-page">
+    <h1>Welcome to the Task Manager App</h1>
+    {% if user.is_authenticated %}
+        <p>You are logged in as {{ user.username }}.</p>
+        <a class="default-button" href="{% url 'task_list' %}">Go to Task List</a>
+    {% else %}
+        <p>You are not logged in.</p>
+        <a class="default-button" href="{% url 'login' %}">Login</a>
+        <a class="default-button" href="{% url 'register' %}">Register</a>
+    {% endif %}
+</div>
+{% endblock %}

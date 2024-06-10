@@ -1,0 +1,15 @@
+<!-- task_manager/templates/task_manager/register.html-->
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="register-page">
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button thype="submit"> Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+{% endblock %}

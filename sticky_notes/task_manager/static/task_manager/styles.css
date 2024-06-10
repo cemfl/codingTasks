@@ -1,0 +1,33 @@
+/* posts/static/posts/styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d1d8eb;
+}
+
+header {
+    background-color: #2b3c6a;
+    color: rgb(230, 240, 241);
+    padding: 10px;
+    text-align: left;
+}
+
+main {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #2b3c6a;
+    color: rgb(230, 240, 241);
+    padding: 20px;
+    text-align: left;
+}
