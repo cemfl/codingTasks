@@ -2,7 +2,10 @@
 from django import forms
 from .models import Task
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User # This is a default table for the database
+from django.contrib.auth.models import (
+    User,
+)  # This is a default table for the database
+
 
 class TaskForm(forms.ModelForm):
     class Meta:
@@ -13,9 +16,12 @@ class TaskForm(forms.ModelForm):
             "deadline",
         ]  # Specifies the fields for the form.
 
-class UserRegisterForm(UserCreationForm): # RegisterForm is inheriting from UserCreationForm
+
+class UserRegisterForm(
+    UserCreationForm
+):  # RegisterForm is inheriting from UserCreationForm
     email = forms.EmailField()
-    
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ["username", "email", "password1", "password2"]

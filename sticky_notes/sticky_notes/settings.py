@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     "task_manager",
 ]
 
-LOGIN_REDIRECT_URL = 'index'
-LOGOUT_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "index"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -137,4 +137,4 @@ STATIC_ROOT = BASE_DIR / "static"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'task_manager.CustomUser'
+AUTH_USER_MODEL = "task_manager.CustomUser"

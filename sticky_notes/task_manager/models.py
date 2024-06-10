@@ -1,7 +1,6 @@
 # task_manager/models.py
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.conf import settings
 
 
 class Task(models.Model):
@@ -14,6 +13,7 @@ class Task(models.Model):
     def __str__(self):
         # Shows the title of the task.
         return self.title
+
 
 class CustomUser(AbstractUser):
     # Remove the age field
